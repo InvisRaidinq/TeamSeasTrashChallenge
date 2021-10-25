@@ -1,0 +1,25 @@
+scoreboard: #Lines can't exceed 32 chars
+  #Placeholders: %players% - online player count
+  title: '&6&lTeamSeasChallenge'
+  #Placeholders:
+  #%players% - online player count
+  #%trash% - total trash picked up
+  #%money% - the total amount of money to be donated
+  lines:
+    - '&7&m----------------------'
+    - '&7Trash: %trash%'
+    - '&7Donation: $%money%'
+    - '&7&m----------------------'
+
+money-per-item: 0.01 #How much money should be donated for each item picked up
+minimum-trash-spawn: 1 #Per player in a 100 block radius
+maximum-trash-spawn: 10 #Per player in a 100 block radius
+
+trash-item:
+  material: 'GLASS_BOTTLE'
+  name: '&cTrash'
+  lore:
+    - '&7Pick this up to recycle it!'
+
+messages:
+  trash-recycled: '&aYou have just recycled %amount% pieces of trash!'

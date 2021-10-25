@@ -1,0 +1,14 @@
+name: TeamSeasTrashChallenge
+author: InvisRaidinq
+version: ${git.commit.id.abbrev}
+description: A challenge plugin made for https://youtube.com/Generzon
+main: xyz.invisraidinq.trashchallenge.TrashPlugin
+commands:
+  starttrash:
+    description: Start the trash dropper
+    aliases: [trashstart]
+    permission: trash.admin
+  stoptrash:
+    description: Stop the trash dropper
+    aliases: [trashstop]
+    permission: trash.admin
