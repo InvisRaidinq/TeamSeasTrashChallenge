@@ -58,7 +58,7 @@ public class TrashSpawnTask extends BukkitRunnable {
                     Location possibleLocation = new Location(
                             location.getWorld(),
                             ThreadLocalRandom.current().nextInt(player.getLocation().getBlockX() - this.radius, player.getLocation().getBlockX() + this.radius),
-                            ThreadLocalRandom.current().nextInt(player.getLocation().getBlockY() - 10, player.getLocation().getBlockY() + 10),
+                            ThreadLocalRandom.current().nextInt(player.getLocation().getBlockY() - 3, player.getLocation().getBlockY() + 3),
                             ThreadLocalRandom.current().nextInt(player.getLocation().getBlockZ() - this.radius, player.getLocation().getBlockZ() + this.radius)
                     );
 
@@ -68,7 +68,7 @@ public class TrashSpawnTask extends BukkitRunnable {
                     }
 
                     attempts++;
-                    if (attempts == 1000) {
+                    if (attempts == 1500) {
                         break; //So the server doesn't die - usually people will be in the sea so it won't be an issue, but some players might be a pain
                     }
                 }

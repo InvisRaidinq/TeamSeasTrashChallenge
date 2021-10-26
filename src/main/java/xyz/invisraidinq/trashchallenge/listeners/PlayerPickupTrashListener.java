@@ -35,12 +35,15 @@ public class PlayerPickupTrashListener implements Listener {
         }
 
         ItemStack itemStack = event.getItem().getItemStack();
+        ItemStack trashItem = this.plugin.getTrashManager().getTrashItem();
 
-        if (!itemStack.equals(this.plugin.getTrashManager().getTrashItem())) {
+        if (!itemStack.getType().equals(trashItem.getType())) {
             return;
         }
 
-        player.getInventory().remove(Material.valueOf(this.plugin.getConfigFile().getString("trash-item.material")));
+        event.getItem().remove();
+        event.setCancelled(true);
+
         if (this.plugin.getTrashManager().isActive()) {
             player.sendMessage(CC.colour(this.plugin.getConfigFile().getString("messages.trash-recycled")
                     .replace("%amount%", String.valueOf(itemStack.getAmount()))));

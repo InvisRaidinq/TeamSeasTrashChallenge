@@ -12,18 +12,18 @@ scoreboard: #Lines can't exceed 32 chars
     - '&7&m----------------------'
 
 money-per-item: 0.01 #How much money should be donated for each item picked up
-trash-spawn-per-player: 30 #How many pieces of trash should be spawned around a player
-minimum-trash-spawn: 1 #Per player in a 100 block radius
-maximum-trash-spawn: 10 #Per player in a 100 block radius - no more than 64
+trash-spawn-per-player: 100 #How many pieces of trash should be spawned around a player
+minimum-trash-spawn: 1 #Minumum trash per spawn
+maximum-trash-spawn: 10 #Max amount of trash per spawn - no more than 64
 time-between-trash-spawns: 60 #Time (in seconds) between trash dumpsters and spawns
-trash-spawn-radius: 100 #Radius of blocks around a player for trash to spawn
+trash-spawn-radius: 50 #Radius of blocks around a player for trash to spawn
 
-trash-item:
+trash-item: #Configuration for the actual trash to be picked up
   material: 'GLASS_BOTTLE'
   name: '&cTrash'
   lore:
     - '&7Pick this up to recycle it!'
 
-messages:
+messages: #Misc messages
   trash-recycled: '&aYou have just recycled %amount% pieces of trash!'
   next-dumpster: '&cThe next trash dumpster is now arriving!'

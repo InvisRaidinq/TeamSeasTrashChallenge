@@ -3,6 +3,7 @@ package xyz.invisraidinq.trashchallenge;
 import io.github.thatkawaiisam.assemble.Assemble;
 import io.github.thatkawaiisam.assemble.AssembleStyle;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Item;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.invisraidinq.trashchallenge.commands.StartTrashCommand;
 import xyz.invisraidinq.trashchallenge.commands.StopTrashCommand;
@@ -47,9 +48,17 @@ public class TrashPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         this.assemble.cleanup();
+
+        //Persist data
         this.dataFile.set("trash-collected", this.trashManager.getTrashPickedUp());
         this.dataFile.set("money-donated", this.trashManager.getMoneyDonated());
         this.dataFile.save();
+
+        Bukkit.getWorlds().forEach(world -> world.getEntities().forEach(entity -> {
+            if (entity instanceof Item) {
+                entity.remove(); //Clear entities on shutdown
+            }
+        }));
     }
 
     public ConfigFile getConfigFile() {
