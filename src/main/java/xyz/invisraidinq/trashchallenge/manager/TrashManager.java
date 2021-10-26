@@ -10,7 +10,7 @@ public class TrashManager {
 
     private final TrashPlugin plugin;
 
-    private boolean active = true;
+    private boolean active = false;
 
     private final ItemStack trashItem;
 

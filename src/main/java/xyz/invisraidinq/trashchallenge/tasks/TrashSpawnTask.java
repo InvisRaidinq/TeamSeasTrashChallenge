@@ -13,7 +13,6 @@ import xyz.invisraidinq.trashchallenge.utils.CC;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicInteger;
 
 //This class probably isnt' the most efficient way to do it but as it's only supposed to be a quick plugin it should be fine
 public class TrashSpawnTask extends BukkitRunnable {
