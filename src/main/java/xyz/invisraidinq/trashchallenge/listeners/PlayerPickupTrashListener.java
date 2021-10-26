@@ -1,5 +1,6 @@
 package xyz.invisraidinq.trashchallenge.listeners;
 
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -39,7 +40,7 @@ public class PlayerPickupTrashListener implements Listener {
             return;
         }
 
-        player.getInventory().remove(itemStack);
+        player.getInventory().remove(Material.valueOf(this.plugin.getConfigFile().getString("trash-item.material")));
         if (this.plugin.getTrashManager().isActive()) {
             player.sendMessage(CC.colour(this.plugin.getConfigFile().getString("messages.trash-recycled")
                     .replace("%amount%", String.valueOf(itemStack.getAmount()))));
