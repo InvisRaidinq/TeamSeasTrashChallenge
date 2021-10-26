@@ -59,6 +59,8 @@ public class TrashPlugin extends JavaPlugin {
                 entity.remove(); //Clear entities on shutdown
             }
         }));
+
+        Bukkit.getScheduler().cancelTasks(this);
     }
 
     public ConfigFile getConfigFile() {
