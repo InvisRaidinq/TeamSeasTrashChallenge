@@ -9,6 +9,7 @@ import xyz.invisraidinq.trashchallenge.commands.StopTrashCommand;
 import xyz.invisraidinq.trashchallenge.listeners.PlayerPickupTrashListener;
 import xyz.invisraidinq.trashchallenge.manager.TrashManager;
 import xyz.invisraidinq.trashchallenge.scoreboard.ScoreboardProvider;
+import xyz.invisraidinq.trashchallenge.tasks.TrashSpawnTask;
 import xyz.invisraidinq.trashchallenge.utils.ConfigFile;
 
 import javax.swing.*;
@@ -38,11 +39,17 @@ public class TrashPlugin extends JavaPlugin {
         this.assemble = new Assemble(this, new ScoreboardProvider(this));
         this.assemble.setTicks(20L);
         this.assemble.setAssembleStyle(AssembleStyle.MODERN);
+
+        //We'll only run the absolute essentials on the main thread, or this will get heavy
+        new TrashSpawnTask(this).runTaskTimerAsynchronously(this, 0L, 20 * this.configFile.getLong("time-between-trash-spawns"));
     }
 
     @Override
     public void onDisable() {
         this.assemble.cleanup();
+        this.dataFile.set("trash-collected", this.trashManager.getTrashPickedUp());
+        this.dataFile.set("money-donated", this.trashManager.getMoneyDonated());
+        this.dataFile.save();
     }
 
     public ConfigFile getConfigFile() {

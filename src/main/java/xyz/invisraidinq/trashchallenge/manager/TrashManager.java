@@ -27,6 +27,8 @@ public class TrashManager {
                 .setLore(config.getStringList("trash-item.lore"))
                 .build();
 
+        this.trashPickedUp = plugin.getDataFile().getInt("trash-collected");
+        this.moneyDonated = plugin.getDataFile().getDouble("money-donated");
         this.moneyPerItem = this.plugin.getConfigFile().getDouble("money-per-item");
     }
 
