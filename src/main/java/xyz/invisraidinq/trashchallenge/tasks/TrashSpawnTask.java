@@ -64,6 +64,7 @@ public class TrashSpawnTask extends BukkitRunnable {
 
                     if (possibleLocation.getBlock().getType() == Material.WATER) {
                         possibleLocations.add(possibleLocation);
+                        x++;
                     }
 
                     attempts++;
