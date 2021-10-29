@@ -51,5 +51,3 @@ Contributions are always welcome! The plugin was made initially in under 24 hour
 ## License
 
 This project is an open-sourced project licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. Please ensure you understand and agree to this before using this project.
-
-  
