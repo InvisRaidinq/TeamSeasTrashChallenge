@@ -15,7 +15,7 @@ This plugin was originally made for [Generzon](https://youtube.com/Generzon).
 ## FAQ
 
 #### What version does this plugin run on?
-The plugin was developed for 1.17.1, but should be compatible for previous and future versions with niminal, if any, changes.
+The plugin was developed for 1.17.1, but should be compatible for previous and future versions with minimal, if any, changes.
 
 #### Where is the world file that was used in the video?
 You can find the Ocean World that was used originally along with the download under the [releases](https://github.com/InvisRaidinq/TeamSeasTrashChallenge/releases) section.
